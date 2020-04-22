@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "name": "study-workspaces",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/thadeu/study-yarn-workspaces.git",
+  "author": "Thadeu Esteves Jr <tadeuu@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12",
+    "yarn": "1.x"
+  },
+  "scripts": {
+    "dev": "concurrently \"yarn backend:start\" \"yarn frontend:start\"",
+    "frontend:start": "yarn workspace @study-workspaces/frontend start",
+    "backend:start": "yarn workspace @study-workspaces/backend start"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
